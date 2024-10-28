@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+    volumes:
+      - ./src:/var/www/html  
+    working_dir: /var/www/html
+
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: your_database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db

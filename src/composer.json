@@ -1,0 +1,22 @@
+{
+  "name": "vendor_name/src",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "kiryl",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+  "psr-4": {
+    "Kernel\\": "core/",
+    "App\\": "app/"
+  }
+  },
+  "require": {
+    "php": ">=8.0",
+    "symfony/var-dumper": "^6.4"
+  }
+}
